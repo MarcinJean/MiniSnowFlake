@@ -1,0 +1,21 @@
+{
+    "name": "yourvendor/mini-snowflake",
+    "description": "A lightweight, case-insensitive, short ID generator using a mini Snowflake algorithm.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MiniSnowflake\\IdGenerator\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    },
+    "authors": [
+        {
+            "name": "Marcin Jean",
+            "email": "Marcin@MarcinJean.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
