@@ -13,6 +13,14 @@ class MiniSnowflake
     private static int $lastTimestamp = 0;
     private static int $sequence = 0;
 
+    public function __construct(int $timestamp = null)
+    {
+        if ($timestamp != null) {
+            $timestamp = strtotime(self::DEFAULT_EPOCH_DATETIME);
+            self::$customEpoch = $timestamp;
+        }
+    }
+
     public static function setEpoch(int $milliseconds): void
     {
         self::$customEpoch = $milliseconds;
