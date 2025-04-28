@@ -3,9 +3,15 @@
     "description": "A lightweight, case-insensitive, short ID generator using a mini Snowflake algorithm.",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/MarcinJean/MiniSnowFlake",
     "autoload": {
         "psr-4": {
-            "MiniSnowflake\\IdGenerator\\": "src/"
+            "MarcinJean\\MiniSnowflake\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MarcinJean\\MiniSnowflake\\Tests\\": "tests/"
         }
     },
     "require": {
@@ -14,19 +20,25 @@
     "require-dev": {
         "phpunit/phpunit": "^9.5"
     },
-    "autoload-dev": {
-        "psr-4": {
-            "MiniSnowflake\\IdGenerator\\Tests\\": "tests/"
-        }
-    },
     "scripts": {
         "test": "phpunit"
     },
+    "bin": [
+        "bin/generate-id.php"
+    ],
     "authors": [
         {
             "name": "Marcin Jean",
             "email": "Marcin@MarcinJean.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MarcinJean\\MiniSnowflake\\Providers\\LaravelServiceProvider"
+            ]
+        }
+    }
 }
